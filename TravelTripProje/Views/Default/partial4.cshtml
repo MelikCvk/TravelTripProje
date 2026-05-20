@@ -1,12 +1,12 @@
 ﻿@using TravelTripProje.Models.Siniflar
-@model  List<Blog>
+@model List<Blog>
 <div class="padding1">
     <h4>En Beğendiğim Yerler</h4>
     <div class="box-left">
         @foreach (var x in Model)
         {
             <div class="bot-img">
-                <img src="@x.BlogImage" style="width:120px; height:65px;" alt="" />
+                <img src="@x.BlogImage" alt="" />
             </div>
             <div class="bot-desc1">
                 <p>@x.Baslik</p>
@@ -14,7 +14,5 @@
             <div class="clear"></div>
         }
     </div>
-
-        @Html.Action("Partial5", "Default")
-  
+    @Html.Action("Partial5", "Default")
 </div>

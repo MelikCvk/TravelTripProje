@@ -85,5 +85,10 @@ namespace TravelTripProje.Controllers
             c.SaveChanges();
             return RedirectToAction("YorumListesi");
         }
+        public ActionResult Iletisim()
+        {
+            var liste = c.Iletisimler.ToList();
+            return View(liste);
+        }
     }
 }

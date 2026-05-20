@@ -4,6 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+.container {
+	width: 90% !important;
+	max-width: 1600px !important;
+}
 html, body{
     font-size: 100%;
 	background-size:cover;
@@ -905,4 +909,71 @@ height: 135px;
 .content-form h3 {
 font-size: 1.1em;
 }
+}
+/* Font ve layout düzeltmeleri */
+.container {
+	width: 90% !important;
+	max-width: 1600px !important;
+}
+
+.single-grid p {
+	font-size: 1.4em !important;
+	line-height: 2em !important;
+}
+
+.single-grid img {
+	margin-bottom: 15px !important;
+}
+
+.single-grid h2 {
+	font-size: 1.8em !important;
+	color: #a2365a !important;
+	margin: 15px 0 10px 0 !important;
+	font-weight: bold !important;
+	border-bottom: 2px solid #a2365a !important;
+	padding-bottom: 8px !important;
+}
+
+.recent li a, .comments ul li a {
+	font-size: 1.2em !important;
+	line-height: 2em !important;
+}
+
+.post-info p {
+	font-size: 1.2em !important;
+	line-height: 1.8em !important;
+}
+
+.desc p {
+	font-size: 1.3em !important;
+}
+
+.recent h3, .comments h3 {
+	font-size: 1.5em !important;
+	color: #a2365a !important;
+	border-bottom: 1px solid #ddd !important;
+	padding-bottom: 5px !important;
+	margin-bottom: 10px !important;
+}
+.single-grid h2 {
+	font-size: 2em !important;
+	color: #a2365a !important;
+	margin: 15px 0 15px 0 !important;
+	font-weight: 600 !important;
+	font-family: 'Oswald', sans-serif !important;
+	border-bottom: 2px solid #eee !important;
+	padding-bottom: 10px !important;
+}
+.single-grid a {
+	font-size: 1.5em !important;
+	color: #a2365a !important;
+	font-weight: 600 !important;
+	font-family: 'Oswald', sans-serif !important;
+	display: block !important;
+	margin: 10px 0 5px 0 !important;
+}
+.single-grid {
+	margin-bottom: 80px !important;
+	padding-bottom: 40px !important;
+	border-bottom: 2px solid #eee !important;
 }

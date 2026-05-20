@@ -1,0 +1,28 @@
+﻿@model TravelTripProje.Models.Siniflar.iletisim
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="wrap">
+    <div class="contact-top">
+        <h3>İletişim</h3>
+        @if (ViewBag.Mesaj != null)
+        {
+            <p style="color:green;">@ViewBag.Mesaj</p>
+        }
+    </div>
+    @using (Html.BeginForm("Contact", "Default", FormMethod.Post))
+    {
+        <div class="form">
+            <input type="text" name="AdSoyad" placeholder="Ad Soyad" />
+            <input type="text" name="Mail" placeholder="Email" />
+            <input type="text" name="Konu" placeholder="Konu" />
+        </div>
+        <div class="form1">
+            <textarea name="Mesaj" placeholder="Mesajınız"></textarea>
+            <input type="submit" value="Gönder" class="read" />
+        </div>
+        <div class="clear"></div>
+    }
+</div>

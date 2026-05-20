@@ -1,22 +1,19 @@
 ﻿@using TravelTripProje.Models.Siniflar
 @model IEnumerable<Hakkimizda>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hakkımızda";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
-<div class="content">
-    <div class="wrap">
-        <div class="about">
-            <h3>Hakkimizda</h3>
-
-            @foreach (var x in Model)
-            {
-                <img src="@x.FotoUrl" alt="" />
+<div class="wrap">
+    <div class="about">
+        <h3>Hakkımızda</h3>
+        @foreach (var x in Model)
+        {
+            <div style="display:flex; gap:30px; align-items:flex-start; margin-bottom:30px;">
+                <img src="@x.FotoUrl" alt="" style="width:350px; height:250px; object-fit:cover; border-radius:8px;" />
                 <p>@x.Aciklama</p>
-            }
-
-        </div>
+            </div>
+        }
     </div>
 </div>
-
