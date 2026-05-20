@@ -15,9 +15,9 @@ namespace TravelTripProje.Controllers
         BlokYorum bly=new BlokYorum();
         public ActionResult Index()
         {
-            //var bloklar = c.Blogs.ToList();
-            bly.Deger1=c.Blogs.ToList();
-            bly.Deger3 =c.Blogs.Take(3);
+            bly.Deger1 = c.Blogs.ToList();
+            bly.Deger3 = c.Blogs.Take(3);
+            bly.Deger2 = c.Yorumlars.OrderByDescending(x => x.ID).Take(5).ToList();
             return View(bly);
         }
         public ActionResult BlogDetay(int? id)
@@ -25,6 +25,8 @@ namespace TravelTripProje.Controllers
             //var blog = c.Blogs.Where(x => x.ID == id).ToList();
             bly.Deger1 = c.Blogs.Where(x => x.ID == id).ToList();
             bly.Deger2 = c.Yorumlars.Where(x => x.Blogid == id).ToList();
+            bly.Deger3 = c.Blogs.OrderByDescending(x => x.ID).ToList();
+            ViewBag.BlogId = id;
             return View(bly);
         }
         [HttpGet]
