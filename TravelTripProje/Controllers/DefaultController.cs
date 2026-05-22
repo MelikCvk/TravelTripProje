@@ -54,5 +54,29 @@ namespace TravelTripProje.Controllers
             var dg = c.Blogs.Take(3).OrderByDescending(x=>x.ID).ToList();
             return PartialView(dg);
         }
+        public ActionResult Oteller()
+        {
+            return View();
+        }
+        public ActionResult Restoranlar()
+        {
+            return View();
+        }
+        public ActionResult Muzeler()
+        {
+            return View();
+        }
+        public ActionResult Ucuslar()
+        {
+            return View();
+        }
+        public ActionResult YapilacakSeyler()
+        {
+            return View();
+        }
+        public ActionResult ArabaKiralama()
+        {
+            return View();
+        }
     }
 }
