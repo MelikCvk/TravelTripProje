@@ -21,11 +21,11 @@
         @foreach (var x in Model)
         {
             <tr>
-                <td>@x.ID</td>
+                <td>@x.Id</td>
                 <td>@x.FotoUrl</td>
                 <td>@x.Aciklama</td>
-                <td><a href="/Admin/HakkimizdaGetir/@x.ID" class="btn btn-warning">Düzenle</a></td>
-                <td><a href="/Admin/HakkimizdaSil/@x.ID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/HakkimizdaGetir/@x.Id" class="btn btn-warning">Düzenle</a></td>
+                <td><a href="/Admin/HakkimizdaSil/@x.Id" class="btn btn-danger">Sil</a></td>
             </tr>
         }
     </tbody>
