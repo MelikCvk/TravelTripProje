@@ -90,5 +90,51 @@ namespace TravelTripProje.Controllers
             var liste = c.Iletisimler.ToList();
             return View(liste);
         }
+        // Liste
+        public ActionResult Hakkimizda()
+        {
+            var liste = c.Hakkimizdalar.ToList();
+            return View(liste);
+        }
+
+        // Yeni kayıt sayfası
+        public ActionResult YeniHakkimizda()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniHakkimizda(Hakkimizda model)
+        {
+            c.Hakkimizdalar.Add(model);
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
+
+        // Düzenle
+        public ActionResult HakkimizdaGetir(int id)
+        {
+            var kayit = c.Hakkimizdalar.Find(id);
+            return View(kayit);
+        }
+
+        [HttpPost]
+        public ActionResult HakkimizdaGetir(Hakkimizda model)
+        {
+            var kayit = c.Hakkimizdalar.Find(model.Id);
+            kayit.FotoUrl = model.FotoUrl;
+            kayit.Aciklama = model.Aciklama;
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
+
+        // Sil
+        public ActionResult HakkimizdaSil(int id)
+        {
+            var kayit = c.Hakkimizdalar.Find(id);
+            c.Hakkimizdalar.Remove(kayit);
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
     }
 }
