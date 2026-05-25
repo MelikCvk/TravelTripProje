@@ -121,6 +121,8 @@ Kullanıcıların mesaj gönderebileceği form sayfası.
 ---
 
 ## 📁 Proje Yapısı
+
+```
 TravelTripProje/
 ├── Controllers/
 │   ├── DefaultController.cs      # Ana sayfa, iletişim, rehber sayfaları
@@ -172,52 +174,83 @@ TravelTripProje/
 │   ├── css/style.css             # Blog sayfaları CSS
 │   └── images/                   # Blog görselleri
 └── weblogin Tema/                # Login sayfası teması
+```
 
-⚙️ Kurulum
-Gereksinimler
+---
 
-Visual Studio 2019 veya üzeri
-.NET Framework 4.x
-SQL Server 2019 veya üzeri
-SQL Server Management Studio (SSMS)
+## ⚙️ Kurulum
 
-Adımlar
-1. Projeyi klonlayın:
-bashgit clone https://github.com/MelikCvk/TravelTripProje.git
-2. Veritabanını restore edin:
+### Gereksinimler
+- Visual Studio 2019 veya üzeri
+- .NET Framework 4.x
+- SQL Server 2019 veya üzeri
+- SQL Server Management Studio (SSMS)
 
-SSMS'i açın
-Databases → Restore Database
-TravelData.bak dosyasını seçin
-Restore işlemini tamamlayın
+### Adımlar
 
-3. Connection String'i güncelleyin:
-Web.config dosyasında aşağıdaki satırı kendi SQL Server bilgilerinize göre düzenleyin:
-xml<connectionStrings>
+**1. Projeyi klonlayın:**
+```bash
+git clone https://github.com/MelikCvk/TravelTripProje.git
+```
+
+**2. Veritabanını restore edin:**
+- SSMS'i açın
+- Databases → Restore Database
+- `TravelData.bak` dosyasını seçin
+- Restore işlemini tamamlayın
+
+**3. Connection String'i güncelleyin:**
+
+`Web.config` dosyasında aşağıdaki satırı kendi SQL Server bilgilerinize göre düzenleyin:
+
+```xml
+<connectionStrings>
   <add name="Context" 
        connectionString="Data Source=SUNUCU_ADI;Initial Catalog=TravelData;Integrated Security=True" 
        providerName="System.Data.SqlClient" />
 </connectionStrings>
-4. Projeyi çalıştırın:
+```
 
-Visual Studio'da F5 veya Ctrl+F5
+**4. Projeyi çalıştırın:**
+- Visual Studio'da `F5` veya `Ctrl+F5`
 
+---
 
-🗄️ Veritabanı Şeması
+## 🗄️ Veritabanı Şeması
+
+```
 Blogs          → ID, Baslik, Aciklama, BlogImage, Tarih
 Yorumlars      → ID, KullaniciAdi, Mail, Yorum, Blogid
 iletisims      → ID, AdSoyad, Mail, Konu, Mesaj
 Hakkimizdalar  → ID, FotoUrl, Aciklama
+```
 
-🔑 Admin Girişi
+---
+
+## 🔑 Admin Girişi
+
 Admin paneline erişmek için:
+
+```
 URL: /GirisYap/Login
+```
 
-Tüm admin sayfaları [Authorize] attribute ile korunmaktadır. Giriş yapmadan erişim engellidir.
+> Tüm admin sayfaları `[Authorize]` attribute ile korunmaktadır. Giriş yapmadan erişim engellidir.
 
+---
 
-📄 Lisans
+## 📄 Lisans
+
 Bu proje eğitim amaçlı geliştirilmiştir.
 
-👨‍💻 Geliştirici
-Melik Çevik
+---
+
+## 👨‍💻 Geliştirici
+
+**Melik Çavuk**
+
+[![GitHub](https://img.shields.io/badge/GitHub-MelikCvk-black)](https://github.com/MelikCvk)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/melikcvk)
+---
+
+> *"Sınırların ötesine geçmek, sadece yeni koordinatlar keşfetmek değil; dünyaya her seferinde yeni bir gözle bakmaktır."*
