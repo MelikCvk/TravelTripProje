@@ -121,3 +121,103 @@ Kullanıcıların mesaj gönderebileceği form sayfası.
 ---
 
 ## 📁 Proje Yapısı
+TravelTripProje/
+├── Controllers/
+│   ├── DefaultController.cs      # Ana sayfa, iletişim, rehber sayfaları
+│   ├── BlogController.cs         # Blog listesi, detay, yorum
+│   ├── AdminController.cs        # Admin panel işlemleri
+│   ├── AboutController.cs        # Hakkımızda
+│   └── GirisYapController.cs     # Giriş/çıkış
+├── Models/
+│   └── Siniflar/
+│       ├── Blog.cs               # Blog modeli
+│       ├── Yorumlar.cs           # Yorum modeli
+│       ├── iletisim.cs           # İletişim modeli
+│       ├── Hakkimizda.cs         # Hakkımızda modeli
+│       ├── BlokYorum.cs          # Composite view modeli
+│       └── Context.cs            # DbContext
+├── Views/
+│   ├── Default/                  # Ana sayfa ve rehber view'ları
+│   │   ├── Index.cshtml
+│   │   ├── Contact.cshtml
+│   │   ├── Oteller.cshtml
+│   │   ├── Restoranlar.cshtml
+│   │   ├── Muzeler.cshtml
+│   │   ├── Ucuslar.cshtml
+│   │   ├── YapilacakSeyler.cshtml
+│   │   └── ArabaKiralama.cshtml
+│   ├── Blog/                     # Blog view'ları
+│   │   ├── Index.cshtml
+│   │   └── BlogDetay.cshtml
+│   ├── Admin/                    # Admin panel view'ları
+│   │   ├── Index.cshtml
+│   │   ├── YeniBlog.cshtml
+│   │   ├── BlogGetir.cshtml
+│   │   ├── BlogDetay.cshtml
+│   │   ├── YorumListesi.cshtml
+│   │   ├── YorumGetir.cshtml
+│   │   ├── Iletisim.cshtml
+│   │   ├── Hakkimizda.cshtml
+│   │   ├── YeniHakkimizda.cshtml
+│   │   └── HakkimizdaGetir.cshtml
+│   ├── About/                    # Hakkımızda view'ı
+│   ├── GirisYap/                 # Login view'ı
+│   └── Shared/
+│       ├── _TestLayout.cshtml    # Ana site layout'u
+│       └── _AdminLayout.cshtml   # Admin panel layout'u
+├── web/
+│   ├── css/style.css             # Ana site CSS (responsive)
+│   └── images/                   # Ana site görselleri
+├── web2/
+│   ├── css/style.css             # Blog sayfaları CSS
+│   └── images/                   # Blog görselleri
+└── weblogin Tema/                # Login sayfası teması
+
+⚙️ Kurulum
+Gereksinimler
+
+Visual Studio 2019 veya üzeri
+.NET Framework 4.x
+SQL Server 2019 veya üzeri
+SQL Server Management Studio (SSMS)
+
+Adımlar
+1. Projeyi klonlayın:
+bashgit clone https://github.com/MelikCvk/TravelTripProje.git
+2. Veritabanını restore edin:
+
+SSMS'i açın
+Databases → Restore Database
+TravelData.bak dosyasını seçin
+Restore işlemini tamamlayın
+
+3. Connection String'i güncelleyin:
+Web.config dosyasında aşağıdaki satırı kendi SQL Server bilgilerinize göre düzenleyin:
+xml<connectionStrings>
+  <add name="Context" 
+       connectionString="Data Source=SUNUCU_ADI;Initial Catalog=TravelData;Integrated Security=True" 
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
+4. Projeyi çalıştırın:
+
+Visual Studio'da F5 veya Ctrl+F5
+
+
+🗄️ Veritabanı Şeması
+Blogs          → ID, Baslik, Aciklama, BlogImage, Tarih
+Yorumlars      → ID, KullaniciAdi, Mail, Yorum, Blogid
+iletisims      → ID, AdSoyad, Mail, Konu, Mesaj
+Hakkimizdalar  → ID, FotoUrl, Aciklama
+
+🔑 Admin Girişi
+Admin paneline erişmek için:
+URL: /GirisYap/Login
+
+Tüm admin sayfaları [Authorize] attribute ile korunmaktadır. Giriş yapmadan erişim engellidir.
+
+
+📄 Lisans
+Bu proje eğitim amaçlı geliştirilmiştir.
+
+👨‍💻 Geliştirici
+Melik Çevik
