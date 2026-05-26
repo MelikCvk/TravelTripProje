@@ -2,7 +2,7 @@
 
 namespace TravelTripProje.Models.Siniflar
 {
-    internal class keyAttribute : Attribute
+    internal class KeyAttribute : Attribute
     {
     }
 }

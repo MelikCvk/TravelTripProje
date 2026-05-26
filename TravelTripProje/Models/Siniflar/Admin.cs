@@ -8,7 +8,7 @@ namespace TravelTripProje.Models.Siniflar
 {
     public class Admin
     {
-        [Key]
+        [System.ComponentModel.DataAnnotations.Key]
         public int ID { get; set; }
         public string Kullanici { get; set; }
         public string Sifre { get; set; }

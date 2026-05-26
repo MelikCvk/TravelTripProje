@@ -88,13 +88,13 @@ namespace TravelTripProje.Controllers
         }
         public ActionResult Iletisim()
         {
-            var liste = c.Iletisimler.ToList();
+            var liste = c.Iletisims.ToList();
             return View(liste);
         }
         // Liste
         public ActionResult Hakkimizda()
         {
-            var liste = c.Hakkimizdalar.ToList();
+            var liste = c.Hakkimizdas.ToList();
             return View(liste);
         }
 
@@ -107,7 +107,7 @@ namespace TravelTripProje.Controllers
         [HttpPost]
         public ActionResult YeniHakkimizda(Hakkimizda model)
         {
-            c.Hakkimizdalar.Add(model);
+            c.Hakkimizdas.Add(model);
             c.SaveChanges();
             return RedirectToAction("Hakkimizda");
         }
@@ -115,14 +115,14 @@ namespace TravelTripProje.Controllers
         // Düzenle
         public ActionResult HakkimizdaGetir(int id)
         {
-            var kayit = c.Hakkimizdalar.Find(id);
+            var kayit = c.Hakkimizdas.Find(id);
             return View(kayit);
         }
 
         [HttpPost]
         public ActionResult HakkimizdaGetir(Hakkimizda model)
         {
-            var kayit = c.Hakkimizdalar.Find(model.Id);
+            var kayit = c.Hakkimizdas.Find(model.Id);
             kayit.FotoUrl = model.FotoUrl;
             kayit.Aciklama = model.Aciklama;
             c.SaveChanges();
@@ -132,8 +132,8 @@ namespace TravelTripProje.Controllers
         // Sil
         public ActionResult HakkimizdaSil(int id)
         {
-            var kayit = c.Hakkimizdalar.Find(id);
-            c.Hakkimizdalar.Remove(kayit);
+            var kayit = c.Hakkimizdas.Find(id);
+            c.Hakkimizdas.Remove(kayit);
             c.SaveChanges();
             return RedirectToAction("Hakkimizda");
         }

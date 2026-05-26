@@ -188,7 +188,7 @@ body {
         -webkit-transform-origin: 0 0;
         transform-origin: 0 0;
         -moz-transition: -moz-transform 0.1s linear;
-        -ms-transition: -ms-transform 0.1s linear;
+        transition: -ms-transform 0.1s linear;
         -o-transition: -o-transform 0.1s linear;
         -webkit-transition: -webkit-transform 0.1s linear;
         transition: transform 0.1s linear;
@@ -333,7 +333,7 @@ h2 {
     box-shadow: 0 0 1px #aaa;
     -webkit-box-shadow: 0 0 1px #aaa;
     -moz-box-shadow: 0 0 1px #aaa;
-    -o-box-shadow: 0 0 1px #aaa;
+    box-shadow: 0 0 1px #aaa;
     margin-bottom: 20px;
 }
 
@@ -374,7 +374,7 @@ span.doller {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    -o-border-radius: 4px;
+    border-radius: 4px;
 }
 
     .read:hover {
@@ -680,7 +680,7 @@ span.doller {
     box-shadow: 0 0 5px #aaa;
     -webkit-box-shadow: 0 0 5px #aaa;
     -moz-box-shadow: 0 0 5px #aaa;
-    -o-box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #aaa;
     padding: 1%;
     width: 100%;
 }
@@ -930,7 +930,31 @@ span.doller {
     width: 65% !important;
     float: left !important;
 }
+
 .link1 {
     font-size: 16px !important;
     font-weight: bold !important;
+}
+
+@media screen and (max-width: 768px) {
+    /* Admin tablosunu kaydırılabilir yap */
+    .table, .admin-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    /* Admin butonlarını tam genişlik yap */
+    .btn, .button {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Sol taraftaki admin menüsünü gizle/alt alta getir */
+    .admin-sidebar {
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+    }
 }

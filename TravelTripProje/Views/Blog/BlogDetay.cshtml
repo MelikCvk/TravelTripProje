@@ -1,4 +1,4 @@
-﻿@model TravelTripProje.Models.Siniflar.BlokYorum
+﻿@model TravelTripProje.Models.Siniflar.BlogYorum
 @{
     ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -58,14 +58,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="col-md-4 side-content">
                 <div class="recent">
-                    <h3>Son Bloglar</h3>
-                    @if (Model.Deger3 != null)
-                    {
-                        foreach (var y in Model.Deger3.Take(4))
+                    <div>
+
+                        <h3>Son Bloglar</h3>
+                        @if (Model.Deger3 != null)
                         {
-                            <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+
+                            foreach (var y in Model.Deger3.Take(4))
+                            {
+
+                                <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+
+                            }
+
                         }
-                    }
+                    </div>
                 </div>
                 <div class="comments">
                     <h3>Son Yorumlar</h3>

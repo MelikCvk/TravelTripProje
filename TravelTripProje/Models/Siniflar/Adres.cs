@@ -8,7 +8,7 @@ namespace TravelTripProje.Models.Siniflar
 {
     public class Adres
     {
-        [Key]
+        [System.ComponentModel.DataAnnotations.Key]
         public int ID { get; set; }
         public String Baslik { get; set; }
         public string Aciklama { get; set; }

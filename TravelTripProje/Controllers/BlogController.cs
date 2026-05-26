@@ -12,7 +12,7 @@ namespace TravelTripProje.Controllers
         // GET: Blog
 
         Context c=new Context();    
-        BlokYorum bly=new BlokYorum();
+        BlogYorum bly=new BlogYorum();
         public ActionResult Index()
         {
             bly.Deger1 = c.Blogs.ToList();

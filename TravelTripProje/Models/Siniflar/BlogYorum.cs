@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TravelTripProje.Models.Siniflar
 {
-    public class BlokYorum
+    public class BlogYorum
     {
         public IEnumerable<Blog> Deger1 { get; set; }
         public IEnumerable<Yorumlar> Deger2 { get; set; }

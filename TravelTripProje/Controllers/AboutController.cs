@@ -13,7 +13,7 @@ namespace TravelTripProje.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            var degerler = c.Hakkimizdalar.ToList();
+            var degerler = c.Hakkimizdas.ToList();
             return View(degerler);
         }
     }
